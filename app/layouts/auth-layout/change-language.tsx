@@ -9,7 +9,6 @@ import {
 } from "@/shared/ui/select";
 import { useLocale } from "next-intl";
 import { setLocale } from "@/app/actions/set-locale";
-
 import { cn } from "@/shared/lib/cn";
 
 const languages = [
@@ -38,7 +37,7 @@ export const ChangeLanguage = ({ classNames }: Props) => {
     >
       <SelectTrigger
         className={cn(
-          "w-fit h-10 px-3 bg-transparent  border-none shadow-none focus:ring-0 focus:ring-offset-0 hover:bg-transparent  flex items-center justify-end gap-2",
+          "w-fit h-10 px-3 bg-transparent dark:bg-transparent hover:bg-transparent dark:hover:bg-transparent data-[state=open]:bg-transparent border-none shadow-none focus:ring-0 focus:ring-offset-0 flex items-center justify-end gap-2 cursor-pointer",
           classNames?.selectTrigger,
         )}
       >
@@ -55,7 +54,7 @@ export const ChangeLanguage = ({ classNames }: Props) => {
           {languages.map((item) => {
             return (
               <SelectItem
-                className="w-full h-10 px-3 py-1 flex items-center hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer rounded-lg text-foreground"
+                className="w-full h-10 px-3 py-1 flex items-center transition-colors cursor-pointer rounded-lg text-foreground"
                 key={item.value}
                 value={item.value}
               >
