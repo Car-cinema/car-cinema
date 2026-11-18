@@ -4,18 +4,14 @@ import { ThemeToggle } from "./theme-toggle";
 
 export function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative h-dvh overflow-hidden">
       <AuthTheme />
-      <div className="relative z-10 flex min-h-screen flex-col">
-        <header className="flex items-center justify-end gap-3 p-4 md:gap-5">
+      <div className="relative z-1 flex h-full flex-col">
+        <header className="flex shrink-0 items-center justify-end gap-3 py-8 px-4 md:gap-5 md:py-6 md:px-15">
           <ThemeToggle />
           <ChangeLanguage />
         </header>
-        <main className="flex flex-1 items-center justify-center p-4">
-          <div className="w-full max-w-md rounded-3xl bg-container p-6 shadow-lg">
-            {children}
-          </div>
-        </main>
+        {children}
       </div>
     </div>
   );
