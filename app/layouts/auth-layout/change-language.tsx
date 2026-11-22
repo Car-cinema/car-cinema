@@ -10,8 +10,8 @@ import {
 import { useLocale } from "next-intl";
 import { setLocale } from "@/app/actions/set-locale";
 import { cn } from "@/shared/lib/cn";
-import { GeorgiaIcon } from "@/assets/icons/georgia-icon";
-import { EngIcon } from "@/assets/icons/eng-icon";
+import { GeorgiaIcon } from "@/shared/icons/georgia-icon";
+import { EngIcon } from "@/shared/icons/eng-icon";
 
 const languages = [
   { label: "ქარ", value: "ka", Icon: GeorgiaIcon },

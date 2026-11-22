@@ -1,5 +1,23 @@
 {
+  "code_not_received": "არ მოგივიდა კოდი?",
+  "continue": "გაგრძელება",
+  "create_new_password": "ახალი პაროლის შექმნა",
+  "create_password": "შექმენი პაროლი",
+  "email": "ელ-ფოსტა",
+  "enter": "შესვლა",
+  "enter_code": "კოდის შეყვანა",
+  "end": "დასრულება",
+  "forgot_password": "დაგავიწყდათ პაროლი?",
   "login": "ავტორიზაცია",
+  "name": "სახელი",
+  "password": "პაროლი",
+  "password_min_length": "მინიმუმ 8 სიმბოლო",
+  "password_number": "მინიმუმ 1 რიცხვი (0-9)",
+  "password_uppercase": "მინიმუმ 1 დიდი სიმბოლო (A-Z)",
+  "remember_me": "დამახსოვრება",
+  "repeat_password": "გაიმეორეთ პაროლი",
+  "resend_code": "ახლიდან გამოგზავნა",
   "reset_password": "პაროლის აღდგენა",
-  "sign_up": "რეგისტრაცია"
+  "sign_up": "რეგისტრაცია",
+  "surname": "გვარი"
 }

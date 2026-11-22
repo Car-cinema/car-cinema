@@ -1,7 +1,7 @@
 "use client";
 import { useTheme } from "next-themes";
-import { DarkThemeIcon } from "@/assets/icons/dark-theme-icon";
-import { LightThemeIcon } from "@/assets/icons/light-theme-icon";
+import { DarkThemeIcon } from "@/shared/icons/dark-theme-icon";
+import { LightThemeIcon } from "@/shared/icons/light-theme-icon";
 import { Button } from "@/shared/ui/button";
 
 export function ThemeToggle() {
