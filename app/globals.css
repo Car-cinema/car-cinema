@@ -15,6 +15,7 @@
   --color-text-disabled: var(--text-icons-disabled);
   --color-surface-active: var(--surface-active);
   --color-surface-subtle: var(--surface-subtle);
+  --color-screen: var(--screen);
 
   /* Component background states */
   --color-component-hover: var(--background-components-hover);
@@ -254,6 +255,7 @@
   --background-layout-surface-2: #ffffff;
   --surface-active: #e3e3e3;
   --surface-subtle: #f6f6f6;
+  --screen: #3d85d0;
   --background-layout-focus-bg: #00000099;
 
   /* Primary */
@@ -400,6 +402,7 @@
   --background-components-selected: #ffffff0d;
   --surface-active: #39393b;
   --surface-subtle: #404040;
+  --screen: #132940;
   --background-components-disabled: #ffffff0d;
   --background-components-tabbar-bg: #0b0b0bc2;
 
