@@ -1,22 +1,21 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { AuthContainer } from "@/app/layouts/auth-layout/auth-container-layout";
-import { PasswordFields } from "@/components/(auth)/password-fields";
 
-export default function Credentials() {
+export default function ResetPassword() {
   const t = useTranslations();
   const router = useRouter();
 
   return (
     <AuthContainer
-      title={t("sign_up")}
+      title={t("reset_password")}
       buttonText={t("continue")}
-      onButtonClick={() => router.push("/sign-up/verify")}
+      onButtonClick={() => router.push("/reset-password/verify")}
+      backFallbackHref="/login"
     >
-      <div className="flex flex-col gap-4 pt-6.5 pb-8 md:pt-17.5">
+      <div className="pt-6.5 pb-8 md:pt-17.5">
         <input type="email" autoComplete="email" placeholder={t("email")} />
-        <PasswordFields />
       </div>
     </AuthContainer>
   );

@@ -1,6 +1,7 @@
 "use client";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Button } from "@/shared/ui/button";
-import { BackButton } from "@/components/(auth)/back-button";
 
 export function AuthContainer({
   title,
@@ -19,25 +20,35 @@ export function AuthContainer({
   showBack?: boolean;
   backFallbackHref?: string;
 }) {
+  const t = useTranslations();
+
   return (
-    <main className="flex min-h-0 w-full flex-1 overflow-y-auto pb-0 md:p-4 md:pb-34.5">
-      <div className="mx-auto mt-auto w-full rounded-t-4xl bg-surface-subtle p-6 py-8 shadow-lg md:max-w-148 md:rounded-4xl md:p-8 md:py-7">
+    <main className="flex min-h-0 w-full flex-1 overflow-y-auto pb-0 md:p-4 md:pb-0">
+      <div className="mx-auto mt-auto w-full rounded-t-4xl bg-surface-subtle p-6 py-8 shadow-lg md:my-auto md:max-w-148 md:rounded-4xl md:p-8 md:py-7">
         {showBack && (
           <div className="pb-4">
-            <BackButton fallbackHref={backFallbackHref} />
+            <Link
+              href={backFallbackHref}
+              className="font-inter text-base font-semibold leading-none"
+            >
+              ← {t("back")}
+            </Link>
           </div>
         )}
-
         <h1 className="w-full text-3xl font-semibold leading-none tracking-normal md:text-4xl">
           {title}
         </h1>
-        <form onSubmit={(e) => e.preventDefault()}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            onButtonClick?.();
+          }}
+        >
           {children}
           <div className="pt-10">
             <Button
-              type="button"
+              type="submit"
               variant="secondary"
-              onClick={onButtonClick}
               className="h-17 w-full bg-screen text-lg leading-none tracking-normal text-white hover:bg-screen"
             >
               {buttonText}

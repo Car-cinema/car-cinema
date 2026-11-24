@@ -8,14 +8,14 @@ export default function AuthTheme() {
         alt=""
         fill
         priority
-        className="object-cover"
+        className="object-cover dark:hidden"
       />
       <Image
         src="/dark-theme.png"
         alt=""
         fill
         priority
-        className="object-cover opacity-0 transition-opacity duration-700 ease-in-out dark:opacity-100"
+        className="hidden object-cover dark:block"
       />
     </div>
   );
