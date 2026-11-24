@@ -8,7 +8,8 @@ import {
   SelectValue,
 } from "@/shared/ui/select";
 import { useLocale } from "next-intl";
-import { setLocale } from "@/app/actions/set-locale";
+import { useRouter, usePathname } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
 import { cn } from "@/shared/lib/cn";
 import { GeorgiaIcon } from "@/shared/icons/georgia-icon";
 import { EngIcon } from "@/shared/icons/eng-icon";
@@ -22,15 +23,21 @@ type Props = { classNames?: { selectTrigger?: string } };
 
 export const ChangeLanguage = ({ classNames }: Props) => {
   const locale = useLocale() || "ka";
-
+  const router = useRouter();
   const currentLanguage =
     languages.find((lang) => lang.value === locale) ?? languages[0];
+  const pathname = usePathname();
+  const handleChange = (next: string | null) => {
+    if (!next || next === locale) {
+      return;
+    }
+    router.replace(pathname, {
+      locale: next as (typeof routing.locales)[number],
+    });
+  };
 
   return (
-    <Select
-      value={locale}
-      onValueChange={(next) => next && next !== locale && setLocale(next)}
-    >
+    <Select value={locale} onValueChange={handleChange}>
       <SelectTrigger
         className={cn(
           "w-fit h-10 pl-3 pr-0 gap-2 justify-end cursor-pointer border-none shadow-none focus:ring-0 bg-transparent dark:bg-transparent hover:bg-transparent dark:hover:bg-transparent data-[state=open]:bg-transparent",

@@ -7,13 +7,16 @@ import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/shared/ui/input-otp";
 
 export default function VerifyCode({
   onButtonClick,
+  backHref,
 }: {
   onButtonClick?: () => void;
+  backHref?: string;
 }) {
   const t = useTranslations();
 
   return (
     <AuthContainer
+      backFallbackHref={backHref}
       title={t("enter_code")}
       buttonText={t("enter")}
       onButtonClick={onButtonClick}
